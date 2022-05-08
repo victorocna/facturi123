@@ -1,0 +1,67 @@
+Options +FollowSymLinks
+RewriteEngine on
+#
+#Acces interzis in directoriile includes si useri
+RewriteCond %{SCRIPT_FILENAME} includes/?
+RewriteRule ^includes/$ includes/ [R]
+RewriteCond %{SCRIPT_FILENAME} useri/?
+RewriteRule ^useri/$ useri/ [R]
+#
+#Redirect 404
+ErrorDocument 404 /404/
+#
+###
+#Redirect www
+#RewriteCond %{http_host} ^facturi123.ro [nc]
+#RewriteRule ^(.*)$ http://www.facturi123.ro/$1 [r=301,nc]
+###
+#
+#Redirect vizualizare
+RewriteRule ^facturi/([a-zA-Z0-9-_]+)/ facturi/$1.php
+#
+#Redirect cont-nou
+RewriteCond %{SCRIPT_FILENAME} !-d
+RewriteRule ^inscriere/([a-zA-Z0-9-]+)/([0-9]+)/$ inscriere/cont-nou/index.php?subdomeniu=$1&id_user=$2
+#
+#Redirect login
+RewriteCond %{SCRIPT_FILENAME} !-d
+RewriteRule ^([a-zA-Z0-9-_]+)$ $1/
+RewriteCond %{SCRIPT_FILENAME} !-d
+RewriteRule ^([a-zA-Z0-9-_]+)/$ modules/
+RewriteRule ^([a-zA-Z0-9-_]+)/([a-zA-Z0-9-_\.\?\&]+)/([0-9]+)/$ modules/$2/$3
+#
+#Redirect facturi; clienti; furnizori; produse; cont; cont_tip; facturi_emitere
+RewriteRule ^modules/([a-z-]+)/([0-9]+)$ modules/$1.php?idf=$2&%{QUERY_STRING}
+#
+#Redirect clienti-add; furnizori-add; produse-add; clienti-add; furnizori-add; produse-add
+RewriteRule ^modules/([a-z_]+)/([0-9]+)$ modules/$1.php?id_user=$2&%{QUERY_STRING}
+#
+#Redirect print-factura; print-chitanta; email; incasare; history
+RewriteRule ^modules/([a-z0-9_]+)/([0-9]+)/([0-9]+)/([a-zA-Z0-9-_]+)$ modules/$1.php?idf=$2&id_furnizor=$3&factura=$4&%{QUERY_STRING}
+#
+#Redirect facturi_vizualizare
+RewriteRule ^([a-zA-Z0-9-_]+)/([a-zA-Z0-9-_\.\?\&]+)/([0-9]+)/([0-9]+)/([a-zA-Z0-9-_]+)/$ modules/$2/$3/$4/$5
+RewriteRule ^modules/([a-z-]+)/([0-9]+)/([0-9]+)/([a-zA-Z0-9-_]+)$ modules/$1.php?idf=$2&id_furnizor=$3&factura=$4&%{QUERY_STRING}
+#
+#Redirect facturi_editare
+RewriteRule ^([a-zA-Z0-9-_]+)/([a-zA-Z0-9-_\.\?\&]+)/([0-9]+)/([a-zA-Z0-9]+)/$ modules/$2/$3/$4
+RewriteRule ^modules/([a-z-]+)/([0-9]+)/([0-9]+)$ modules/$1.php?idf=$2&id_factura=$3
+RewriteRule ^modules/([a-z-]+)/([0-9]+)/D([0-9]+)$ modules/$1.php?idf=$2&id_draft=$3
+#
+###
+#Optimization
+#Header unset ETag
+#FileETag None
+#<FilesMatch "(?i)^.*\.(ico|jpg|jpeg|png|gif)$">
+#Header set Last-Modified "Fri, 24 Dec 2010 00:00:00 GMT"
+#Header set Expires "Fri, 24 Dec 2010 00:00:00 GMT"
+#Header set Cache-Control "public, no-transform"
+#Header set Vary "Accept-Encoding"
+#</FilesMatch>
+#<FilesMatch "(?i)^.*\.(js|css)$">
+#Header set Last-Modified "Fri, 30 Jul 2010 00:00:00 GMT"
+#Header set Expires "Fri, 30 Jul 2010 00:00:00 GMT"
+#Header set Cache-Control "private"
+#Header set Vary "Accept-Encoding"
+#</FilesMatch>
+###

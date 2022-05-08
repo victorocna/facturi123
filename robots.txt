@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+Disallow: /confidentialitate/
+Disallow: /includes/
+Disallow: /legislatie/
+Disallow: /modules/
+Disallow: /termeni-si-conditii/
+Disallow: /useri/

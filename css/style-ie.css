@@ -1,0 +1,24 @@
+button[type="submit"]
+	{ filter : chroma(color=#000000); }
+.after-s
+	{ font-size: 1.2em; margin: 8px 0 4px 0; }
+
+.box-back
+	{ margin-left: 15px; }
+.box-top-ie, .box-bottom-ie
+	{ border: solid 1px #eee; border-bottom: none; }
+.box-bottom-ie
+	{ border-top: none; }
+
+.li-help, .li-help-active
+	{ list-style-type: circle; float: none; position: relative; top: 4px; }
+.li-help-active
+	{ list-style-type: none; }
+
+.text-help
+	{ padding-left: 15px; font-weight: bold; }
+.button-top
+	{ margin: 70px 0 0 30px; }
+
+.icon-pdf-s, .icon-mail-s, .icon-incasare-s, .icon-history-s, .icon-edit-s, .icon-draft-s, .icon-add-s
+	{ padding: 2px 2px 20px 28px; }

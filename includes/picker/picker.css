@@ -1,0 +1,113 @@
+/*styles for jquery ui jmenu plugin */
+
+.ui-jmenucontain {
+	position: absolute;
+	z-index: 999;
+}
+.ui-jmenucontain .ui-jmenu {
+	float: left;
+	padding: 5px !important;
+	width: auto;
+	display: inline;
+	background-image: none !important;
+	clear: left;
+}
+.ui-jmenu ul, .ui-jmenu .ranges, .ui-jmenu .menur-start, .ui-jmenu .menur-end {
+	float: left;
+	padding: 0;
+	margin: 0;
+}
+.ui-jmenu .ranges {
+	width: auto;
+	position: relative;
+	padding: 5px 5px 40px 0;
+	margin-left: 10px;
+}
+.ui-jmenu .menur-start, .ui-jmenu .menur-end {
+	margin-left: 5px;
+}
+.ui-jmenu button.btnDone {
+	margin: 0 5px 5px 0;
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	clear: both;
+	cursor: pointer;
+	font-size: 1.1em;
+}
+.ui-jmenu ul {
+	width: 16em;
+	background: none;
+	border: 0;
+}
+.ui-jmenu li {
+	font-size: .9em;
+	list-style: none;
+	padding: 4px 1px;
+	cursor: pointer;
+	margin: 1px 0;
+	text-align:left;
+	text-transform: uppercase;
+}
+.ui-jmenu li.ui-state-hover, .ui-jmenu li.ui-state-active {
+	padding: 3px 0px;
+}
+.ui-jmenu li.preset_0 {
+	margin-top: 1.5em !important;
+}
+.ui-jmenu .ui-widget-content a {
+	text-decoration: none !important;
+}
+.ui-jmenu li a {
+	font-weight: normal;
+	margin: .3em .5em;
+	display: block;
+}
+.ui-jmenu li span {
+	float: right;
+	margin: .3em .2em;
+}
+.ui-jmenu .title-start, .ui-jmenu .title-end {
+	display: block;
+	margin: 0 0 .2em;
+	font-size: 1em;
+	padding: 0 4px 2px;
+}
+
+.ui-jmenu .ui-datepicker-inline {
+	font-size: 1em;
+}
+.ui-jmenu-dateRange a
+	{ color: #000; text-transform: none; }
+.ui-jmenu-arrows {
+	padding: 2px;
+	width: 204px;
+	position: relative;
+}
+.ui-jmenu-arrows input.ui-rangepicker-input {
+	width: 158px;
+	margin: 0 2px 0 20px;
+	padding: 2px;
+	height: 1.1em;
+}
+.ui-jmenu-arrows .ui-jmenu-prev, .ui-jmenu-arrows .ui-jmenu-next {
+	position: absolute;
+	top: 2px; 
+	padding: 1px;
+}
+.ui-jmenu-arrows .ui-jmenu-prev {
+	left: 2px;
+}
+.ui-jmenu-arrows .ui-jmenu-next {
+	right: 2px;
+}
+.ui-jmenu-arrows .ui-jmenu-prev:hover, 
+.ui-jmenu-arrows .ui-jmenu-next:hover,
+.ui-jmenu-arrows .ui-jmenu-prev:focus, 
+.ui-jmenu-arrows .ui-jmenu-next:focus {
+	padding: 0;
+}
+.f-search
+	{ border: solid 1px #fff; }
+.lista-furnizori
+	{ padding:3px; height:15em; width:20.5em; overflow:auto; }
